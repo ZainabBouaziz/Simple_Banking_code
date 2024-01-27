@@ -21,7 +21,7 @@ class User:
         return self
 
     def transfer_money(self, other_user, amount):
-        self.account.withdraw(amount)
+        self.account.balance-=amount
         other_user.account.deposit(amount)
         return self
     
@@ -33,4 +33,4 @@ zainab.make_deposit(50).display_user_balance().make_deposit(20).display_user_bal
 merya.display_user_balance()
 
 
-"""
+
