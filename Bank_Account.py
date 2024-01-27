@@ -48,3 +48,14 @@ class Retirement_Account(BankAccount):
             amount=amount*1.1
         super().withdraw(amount)    
         return self
+
+class Checking_Account(BankAccount):
+    def __init__(self, int_rate, balance=0):
+        super().__init__(int_rate, balance)
+    
+    def write_check(self,amount):
+        if super().can_withdraw(amount):
+            self.balance-=amount
+        else:
+            print("insufficient Funds")
+        return self
